@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<agents version="1">
+  <agent type="Actor" base="behaviac::Agent">
+    <properties>
+      <property name="towards" type="aStar::DirectionType" member="true" static="false" agent="Actor" />
+    </properties>
+  </agent>
+  <agent type="Player" base="Actor">
+    <properties>
+      <property name="isNavigate" type="bool" member="true" static="false" agent="Player" />
+      <property name="path" type="vector&lt;aStar::AStarPosition*&gt;" member="true" static="false" agent="Player" />
+      <property name="towards" type="aStar::DirectionType" member="true" static="false" agent="Actor" />
+      <property name="par_turnTowards" type="aStar::DirectionType" member="false" static="false" defaultvalue="Origin" />
+    </properties>
+  </agent>
+  <agent type="TestNodeAgent" base="behaviac::Agent">
+    <properties>
+      <property name="testVar_0" type="int" member="true" static="false" agent="TestNodeAgent" />
+      <property name="testVar_1" type="int" member="true" static="false" agent="TestNodeAgent" />
+      <property name="testVar_2" type="float" member="true" static="false" agent="TestNodeAgent" />
+    </properties>
+    <methods>
+      <method name="event_test_int_bool" agent="TestNodeAgent">
+        <parameter name="val_int" type="int" />
+        <parameter name="val_bool" type="bool" />
+      </method>
+    </methods>
+  </agent>
+</agents>

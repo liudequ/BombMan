@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<meta>
+  <types />
+  <agents>
+    <agent type="Player" base="Actor" disp="Player" desc="Player -&gt; Actor">
+      <properties>
+        <property name="par_turnTowards" type="XMLPluginBehaviac.aStar_DirectionType" classname="Player" defaultvalue="Origin" static="false" public="true" readonly="false" disp="par_turnTowards" desc="par_turnTowards" />
+      </properties>
+    </agent>
+    <agent type="TestNodeAgent" base="behaviac::Agent" disp="TestNodeAgent" desc="TestNodeAgent">
+      <methods>
+        <method name="event_test_int_bool" returntype="System.Void" classname="TestNodeAgent" static="false" public="true" istask="true" disp="event_test_int_bool" desc="event_test_int_bool">
+          <parameter name="val_int" type="System.Int32" disp="val_int" desc="" />
+          <parameter name="val_bool" type="System.Boolean" disp="val_bool" desc="" />
+        </method>
+      </methods>
+    </agent>
+  </agents>
+</meta>

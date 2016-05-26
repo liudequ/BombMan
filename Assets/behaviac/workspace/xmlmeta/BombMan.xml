@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<metas version="3.0" language="cs">
+  <types>
+    <enumtype Type="aStar::DirectionType" DisplayName="" Desc="">
+      <enum NativeValue="aStar::Left" Value="Left" DisplayName="Left" Desc="Left" />
+      <enum NativeValue="aStar::Up" Value="Up" DisplayName="Up" Desc="Up" />
+      <enum NativeValue="aStar::Right" Value="Right" DisplayName="Right" Desc="Right" />
+      <enum NativeValue="aStar::Down" Value="Down" DisplayName="Down" Desc="Down" />
+      <enum NativeValue="aStar::LeftTop" Value="LeftTop" DisplayName="LeftTop" Desc="LeftTop" />
+      <enum NativeValue="aStar::LeftBottom" Value="LeftBottom" DisplayName="LeftBottom" Desc="LeftBottom" />
+      <enum NativeValue="aStar::RightBottom" Value="RightBottom" DisplayName="RightBottom" Desc="RightBottom" />
+      <enum NativeValue="aStar::RightTop" Value="RightTop" DisplayName="RightTop" Desc="RightTop" />
+      <enum NativeValue="aStar::Origin" Value="Origin" DisplayName="Origin" Desc="Origin" />
+    </enumtype>
+    <enumtype Type="behaviac::EBTStatus" DisplayName="" Desc="">
+      <enum NativeValue="behaviac::BT_INVALID" Value="BT_INVALID" DisplayName="BT_INVALID" Desc="BT_INVALID" />
+      <enum NativeValue="behaviac::BT_SUCCESS" Value="BT_SUCCESS" DisplayName="BT_SUCCESS" Desc="BT_SUCCESS" />
+      <enum NativeValue="behaviac::BT_FAILURE" Value="BT_FAILURE" DisplayName="BT_FAILURE" Desc="BT_FAILURE" />
+      <enum NativeValue="behaviac::BT_RUNNING" Value="BT_RUNNING" DisplayName="BT_RUNNING" Desc="BT_RUNNING" />
+    </enumtype>
+    <struct Type="System::Object" DisplayName="Object" Desc="Object" IsRefType="true" />
+    <struct Type="aStar::AStarPosition" DisplayName="AStarPosition" Desc="AStarPosition" IsRefType="true" />
+  </types>
+  <agents>
+    <agent classfullname="behaviac::Agent" DisplayName="behaviac.Agent" Desc="behaviac.Agent" IsRefType="true">
+      <Method Name="VectorLength" DisplayName="" Desc="" ReturnType="int" Class="behaviac::Agent" Static="true" Public="true">
+        <Param DisplayName="vector" Desc="vector" Type="System.Collections.IList" />
+      </Method>
+      <Method Name="VectorAdd" DisplayName="" Desc="" ReturnType="void" Class="behaviac::Agent" Static="true" Public="true">
+        <Param DisplayName="vector" Desc="vector" Type="System.Collections.IList&amp;" IsRef="true" />
+        <Param DisplayName="element" Desc="element" Type="System::Object*" />
+      </Method>
+      <Method Name="VectorRemove" DisplayName="" Desc="" ReturnType="void" Class="behaviac::Agent" Static="true" Public="true">
+        <Param DisplayName="vector" Desc="vector" Type="System.Collections.IList&amp;" IsRef="true" />
+        <Param DisplayName="element" Desc="element" Type="System::Object*" />
+      </Method>
+      <Method Name="VectorContains" DisplayName="" Desc="" ReturnType="bool" Class="behaviac::Agent" Static="true" Public="true">
+        <Param DisplayName="vector" Desc="vector" Type="System.Collections.IList&amp;" IsRef="true" />
+        <Param DisplayName="element" Desc="element" Type="System::Object*" />
+      </Method>
+      <Method Name="VectorClear" DisplayName="" Desc="" ReturnType="void" Class="behaviac::Agent" Static="true" Public="true">
+        <Param DisplayName="vector" Desc="vector" Type="System.Collections.IList&amp;" IsRef="true" />
+      </Method>
+    </agent>
+    <agent classfullname="Actor" base="behaviac::Agent" DisplayName="Actor" Desc="Actor" IsRefType="true">
+      <Member Name="towards" DisplayName="" Desc="" Type="aStar::DirectionType" Class="Actor" />
+      <Method Name="move" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Actor" />
+      <Method Name="turnTowards" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Actor">
+        <Param DisplayName="dir" Desc="dir" Type="aStar::DirectionType" />
+      </Method>
+      <Method Name="setBomb" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Actor" />
+    </agent>
+    <agent classfullname="Player" base="Actor" DisplayName="Player" Desc="Player -&gt; Actor" IsRefType="true">
+      <Member Name="path" DisplayName="" Desc="" Type="vector&lt;aStar::AStarPosition*&gt;" Class="Player" />
+      <Member Name="isNavigate" DisplayName="" Desc="" Type="bool" Class="Player" />
+      <Method Name="getMoveDirection" DisplayName="" Desc="" ReturnType="aStar::DirectionType" Class="Player" Public="true" />
+      <Method Name="isCanSetBomb" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Player" Public="true" />
+      <Method Name="isDanger" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Player" Public="true" />
+      <Method Name="findSavePoint" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Player" Public="true" />
+      <Method Name="navigate" DisplayName="" Desc="" ReturnType="behaviac::EBTStatus" Class="Player" Public="true" />
+    </agent>
+    <agent classfullname="TestNodeAgent" base="behaviac::Agent" DisplayName="TestNodeAgent" Desc="TestNodeAgent" IsRefType="true">
+      <Member Name="testVar_0" DisplayName="" Desc="" Type="int" Class="TestNodeAgent" Public="true" />
+      <Member Name="testVar_1" DisplayName="testVar_1" Desc="testVar_1 property" Type="int" Class="TestNodeAgent" Public="true" />
+      <Member Name="testVar_2" DisplayName="" Desc="" Type="float" Class="TestNodeAgent" Public="true" />
+      <Method Name="setEventVarInt" DisplayName="" Desc="" ReturnType="void" Class="TestNodeAgent" Public="true">
+        <Param DisplayName="var" Desc="var" Type="int" />
+      </Method>
+      <Method Name="setEventVarBool" DisplayName="" Desc="" ReturnType="void" Class="TestNodeAgent" Public="true">
+        <Param DisplayName="var" Desc="var" Type="bool" />
+      </Method>
+    </agent>
+  </agents>
+  <instances>
+    <instance name="TestNode" class="TestNodeAgent" DisplayName="TestNode" Desc="TestNode" />
+  </instances>
+</metas>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<workspace name="BombMan" xmlmetafolder="xmlmeta" folder="behaviors" export="..\..\Resources\behaviac\exported">
+  <xmlmeta>BombMan.xml</xmlmeta>
+  <export>
+    <xml>
+      <isexported>True</isexported>
+    </xml>
+    <bson>
+      <isexported>False</isexported>
+    </bson>
+    <cpp>
+      <isexported>False</isexported>
+      <exportunifiedfile>True</exportunifiedfile>
+      <generatecustomizedtypes>True</generatecustomizedtypes>
+    </cpp>
+    <cs>
+      <isexported>False</isexported>
+      <exportunifiedfile>True</exportunifiedfile>
+      <generatecustomizedtypes>True</generatecustomizedtypes>
+    </cs>
+  </export>
+</workspace>

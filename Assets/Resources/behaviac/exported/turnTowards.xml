@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--EXPORTED BY TOOL, DON'T MODIFY IT!-->
+<!--Source File: turnTowards.xml-->
+<behavior name="turnTowards" agenttype="Player" version="4">
+  <node class="DecoratorLoop" id="0">
+    <property Count="const int -1" />
+    <property DecorateWhenChildEnds="true" />
+    <node class="Selector" id="7">
+      <node class="Sequence" id="10">
+        <node class="Action" id="13">
+          <property Method="Self.Player::isDanger()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+        <node class="Action" id="14">
+          <property Method="Self.Player::findSavePoint()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+        <node class="Action" id="15">
+          <property Method="Self.Player::navigate()" />
+          <property ResultOption="BT_INVALID" />
+        </node>
+      </node>
+      <node class="Selector" id="1">
+        <node class="Sequence" id="2">
+          <node class="WaitFrames" id="11">
+            <property Frames="const int 100" />
+          </node>
+          <node class="Action" id="12">
+            <property Method="Self.Actor::move()" />
+            <property ResultOption="BT_INVALID" />
+          </node>
+        </node>
+        <node class="Sequence" id="4">
+          <node class="Condition" id="5">
+            <property Operator="Equal" />
+            <property Opl="Self.Player::isCanSetBomb()" />
+            <property Opr="const behaviac::EBTStatus BT_SUCCESS" />
+          </node>
+          <node class="Action" id="6">
+            <property Method="Self.Actor::setBomb()" />
+            <property ResultOption="BT_INVALID" />
+          </node>
+        </node>
+        <node class="Sequence" id="9">
+          <node class="Assignment" id="3">
+            <property Opl="aStar::DirectionType Self.Player::par_turnTowards" />
+            <property Opr="Self.Player::getMoveDirection()" />
+          </node>
+          <node class="Action" id="8">
+            <property Method="Self.Actor::turnTowards(aStar::DirectionType Self.Player::par_turnTowards)" />
+            <property ResultOption="BT_INVALID" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+</behavior>
